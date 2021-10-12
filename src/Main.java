@@ -7,19 +7,28 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("What is the width of the wall in M?");
-        double width = scan.nextDouble();
-        System.out.println("What is the height of the wall in M?");
-        double height = scan.nextDouble();
-        double area = height * width;
-        System.out.println("area = ");
-        System.out.println(area);
+        System.out.println("How many walls are there?");
+        int wall_number = scan.nextInt();
+        double total_area = 0;
 
+        for (int i =0; i<wall_number;i++) {
+
+            System.out.println("What is the width of a the wall in M?");
+            double width = scan.nextDouble();
+            System.out.println("What is the height of a the wall in M?");
+            double height = scan.nextDouble();
+            double area = height * width;
+            System.out.println("area = ");
+            System.out.println(area);
+            total_area=total_area+area;
+
+        }
+        System.out.println(total_area);
         System.out.println("What is the cost of a tin of paint?");
         double cost = scan.nextDouble();
         System.out.println(cost);
 
-        System.out.println("What is the volume of the paint tin --- 1,2,3,4 or 5 litres");
+        System.out.println("What is the volume of the paint tin --- 1,2,3,4 or 5 litres?");
         int volume =0 ;
 
         int initial_volume =  scan.nextInt();
@@ -49,10 +58,10 @@ public class Main {
         double one_litre_cost = cost / volume;
         System.out.println(one_litre_cost);
 
-        double pre_final_cost = (area / 6) * (one_litre_cost);
-        System.out.println(pre_final_cost);
+        double pre_final_cost = (total_area / 6) * (one_litre_cost);
+        // System.out.println(pre_final_cost);
         String str = "Cost to paint the wall = £" + pre_final_cost;
-        System.out.println(str);
+        // System.out.println(str);
 
         System.out.println("Do you want fancy paint");
         if (scan.next() == "yes") {
@@ -63,10 +72,6 @@ public class Main {
         else {System.out.println(str);
 
         }
-
-
-
-
 
     }
 
